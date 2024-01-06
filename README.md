@@ -6,7 +6,7 @@ Perform Encryption and Decryption from CommandLine
 #### To install globally:
 
 ```bash
-npm install -g encrypt-decrypt-cli
+npm install -g https://github.com/RobinJesba/encrypt-decrypt-cli
 ```
 
 ## Usage
