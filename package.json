@@ -1,0 +1,13 @@
+{
+    "name": "encrypt-decrypt-cli",
+    "version": "1.0.0",
+    "description": "Encrypt and Decrypt Payload",
+    "bin": {
+        "encrypt": "./bin/encrypt",
+        "decrypt": "./bin/decrypt"
+    },
+    "dependencies": {
+        "clipboardy": "^4.0.0",
+        "prompt-sync": "^4.2.0"
+    }
+}

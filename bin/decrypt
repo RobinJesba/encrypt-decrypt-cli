@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const prompt = require('prompt-sync')();
+
+const decrypt = require('../lib/decrypt');
+
+const payload = prompt('Payload: ');
+console.log();
+const key = prompt('Key: ');
+
+decrypt(payload, key).then(decryptedPayload => {
+    console.log('\nDecrypted Payload:\n',decryptedPayload);
+    import('clipboardy').then(clipboardy => {
+        clipboardy.default.writeSync(decryptedPayload);
+    });
+    console.log('\nCopied to Clipboard..');
+}).catch(err => {
+    console.log('\nFailed to Decrypt Payload!');
+});

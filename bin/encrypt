@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const prompt = require('prompt-sync')();
+
+const encrypt = require('../lib/encrypt');
+
+const payload = prompt('Payload: ');
+console.log();
+const key = prompt('Key: ');
+
+encrypt(payload, key).then(encryptedPayload => {
+    console.log('\nEncrypted Payload:\n',encryptedPayload);
+    import('clipboardy').then(clipboardy => {
+        clipboardy.default.writeSync(encryptedPayload);
+    });
+    console.log('\nCopied to clipboard..');
+}).catch(err => {
+    console.log('\nFailed to Encrypt Payload!');
+});
