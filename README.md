@@ -1,6 +1,6 @@
 # encrypt-decrypt-cli
 
-Perform Encryption and Decryption from CommandLine
+Perform Asymmetric Encryption and Decryption from CommandLine
 
 ## Installation
 #### To install globally:
