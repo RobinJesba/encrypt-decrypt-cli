@@ -11,7 +11,11 @@ const key = prompt('Key: ');
 decrypt(payload, key).then(decryptedPayload => {
     console.log('\nDecrypted Payload:\n',decryptedPayload);
     import('clipboardy').then(clipboardy => {
-        clipboardy.default.writeSync(decryptedPayload);
+        try {
+            clipboardy.default.writeSync(decryptedPayload);
+        } catch (error) {
+            clipboardy.default.writeSync(JSON.stringify(decryptedPayload));
+        }
     });
     console.log('\nCopied to Clipboard..');
 }).catch(err => {
